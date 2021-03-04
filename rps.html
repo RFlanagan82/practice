@@ -9,63 +9,73 @@
   <body>
     <h1>Ready to Play?</h1>
     <script type="text/javascript">
-      // 1. Create an array with a variable "Game" = ["Rock", "Paper","Scissors"]
 
-      const computerOptions = ["Rock", "Paper", "Scissors"];
+          function runGame(){
+       // 1. Create an array with a variable "Game" = ["Rock", "Paper","Scissors"]
 
-      // 2. // Create variables to hold the number of wins, losses, and ties. User starts at 0.
+            const computerOptions = ["Rock", "Paper", "Scissors"];
 
-      const wins = 0;
-      const losses = 0;
-      const ties = 0;
+            // 2. // Create variables to hold the number of wins, losses, and ties. User starts at 0.
 
-      //3. Prompt a user to ask for them to choose one of those index items, call this variable userChoice
-      const userChoice = prompt("Please enter: Rock, Paper, or Scissors?");
-      console.log(userChoice);
+            let wins = 0;
+            let losses = 0;
+            let ties = 0;
 
-      //4. Write logic for computer to make a choice randomly out of the 3 computerOption array items
-      const randomNumber = Math.floor(Math.random() * 3);
-       console.log(randomNumber);
+            //3. Prompt a user to ask for them to choose one of those index items, call this variable userChoice
+            const userChoice = prompt("Please enter: Rock, Paper, or Scissors?");
+            console.log(userChoice);
+            alert("You chose " + userChoice)
 
-       //then assign variable computerChoice as equal to the computerChoices-randomNumber]
+            //4. Write logic for computer to make a choice randomly out of the 3 computerOption array items - Don't need to round up here.
+            const randomNumber = Math.floor(Math.random() * 3);
+          //   console.log(randomNumber);
 
-        const computerChoice = computerOptions[randomNumber]
-        console.log(computerChoice);
+             //then assign variable computerChoice as equal to the computerChoices[randomNumber]
 
-      //3. Create a for loop to run this over and over "for(i = 0; i < 3; i++)"
+              const computerChoice = computerOptions[randomNumber]
+              console.log(computerChoice);
 
-      for (var i = 0; i < computerOptions.length; i++)
-        // 4. Create a for loop that randomly returns one of those items in the array.
-        for (var i = 0; i < computerOptions[random]; i++) {}
+            // 5. Display a the result that the computer chose.
+            alert("The computer chose " + computerChoice);
 
+            // 6. Evaluate user choice vs computer choice using conditional statements & Run Compare function
 
-      // 5. Display a the result that the computer chose.
-      alert("The computer chose " + computerChoice);
+            if (userChoice === computerChoice) {
+              ties++;
+              alert("There was a tie! The current number of ties is " + ties);
 
-      // 6. Evaluate user choice vs computer choice using conditional statements.
+            } else if (userChoice === "Rock" && computerChoice === "Scissors") {
+              wins++;
+              alert("You Won this round!");
+            } else if (userChoice === "Scissors" && computerChoice === "Paper") {
+              wins++;
+              alert("You Won this round!");
+            } else if (userChoice === "Paper" && computerChoice === "Rock") {
+              wins++;
+              alert("You Won this round!");
+            } else {
+              losses++;
+              alert("You've lost this round. Sorry! Your current number of losses is " + losses);
 
-      if (userChoice === computerChoice) {
-        alert("There was a tie!");
-        tie++;
-      } else if (userChoice === "Rock" && computerChoice === "Scissors") {
-        alert("You Won this round!");
-        wins++;
-      } else if (userChoice === "Scissors" && computerChoice === "Paper") {
-          alert("You Won this round!");
-          wins++;
-      } else if (userChoice === "Paper" && computerChoice === "Rock") {
-          alert("You Won this round!");
-          wins++;
-      } else {
-          alert("You've lost this round. Sorry!");
-          losses++;
+            }
+
+            // 7. Display the results
+            console.log("You have " + wins + " wins!");
+            console.log("You have " + losses + " losses.");
+            console.log("You have " + ties + " ties.");
+          }
+
+          runGame();
+
+    var replayPrompt = prompt("You you want to play again (yes or no)?");
+      console.log(replayPrompt);
+
+      var replayAnswer = replayPrompt;
+      if (replayPrompt = "yes"){
+          runGame();
+      } if (replayPrompt = "no"){
+          alert("Okay, maybe next time then!")
       }
-
-      // 7. Run Compare function
-      // 8. Display the results
-      console.log(wins);
-      console.log(losses);
-      console.log(ties);
     </script>
   </body>
 </html>
