@@ -15,15 +15,18 @@
     // Ask the user for their desired pizza choice and store the value
     var userPizza = prompt("Which pizza would you like?");
     console.log(userPizza)    
-    //compare the user's pizza against our array
 
+    //compare the user's pizza against our array - first create a variable that will look for a match. Set default to false. This resets the value back to false for each iteration
     var foundMatch = false;
+
+    //Run the for loop once [not 4 times] to see if there is and then set foundMatch to true
     for (var i = 0; i < availablePizzas.length; i++){
         if (userPizza.toLowerCase() === availablePizzas[i].toLowerCase()){
             alert("Sure! We've got " + userPizza + " in stock!");
             foundMatch = true;
         } 
     }
+    //If there is no foundMatch in one loop iteration then alert (Keep this out of the for loop)
     if (!foundMatch) {
         alert("Sorry! We don't have " + userPizza + " in stock.")
     }

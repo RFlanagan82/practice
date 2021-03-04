@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmLoop</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <script type="text/javascript">
+
+      const myFarm = ["chickens", "pigs", "cows", "horses", "ostriches"];
+
+      //Need to create a variable to hold our array length
+      const arrayLength = myFarm.length;
+
+      //* Starting from scratch, write code that loops through the following array and logs the name of each animal on the farm to the console:
+
+      for (var i = 0; i < arrayLength; i++) {
+        console.log(myFarm[i]);
+        if (myFarm[i].charAt(0) === "c" || myFarm[i].charAt(0) === "o") {
+          alert("Starts with a 'c' or 'o'!");
+        }
+      }
+
+      //* Then check if the first letter in the animal's name begins with a "c" or "o". If it does, create an alert saying, "Starts with 'c' or 'o'!"
+    </script>
+  </body>
+</html>
