@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <script type="text/javascript">
+    console.log("Hello World")
+    //Array of Strings
+    var availablePizzas = ["Pepperoni", "Cheese","Margherita","Veggie"]
+    // Ask the user for their desired pizza choice and store the value
+    var userPizza = prompt("Which pizza would you like?");
+    console.log(userPizza)    
+    //compare the user's pizza against our array
+
+    var foundMatch = false;
+    for (var i = 0; i < availablePizzas.length; i++){
+        if (userPizza.toLowerCase() === availablePizzas[i].toLowerCase()){
+            alert("Sure! We've got " + userPizza + " in stock!");
+            foundMatch = true;
+        } 
+    }
+    if (!foundMatch) {
+        alert("Sorry! We don't have " + userPizza + " in stock.")
+    }
+    
+    
+    </script>
+</body>
+</html>
