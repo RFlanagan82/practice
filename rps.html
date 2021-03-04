@@ -23,21 +23,26 @@
       const userChoice = prompt("Please enter: Rock, Paper, or Scissors?");
       console.log(userChoice);
 
+      //4. Write logic for computer to make a choice randomly out of the 3 computerOption array items
+      const randomNumber = Math.floor(Math.random() * 3);
+       console.log(randomNumber);
+
+       //then assign variable computerChoice as equal to the computerChoices-randomNumber]
+
+        const computerChoice = computerOptions[randomNumber]
+        console.log(computerChoice);
+
       //3. Create a for loop to run this over and over "for(i = 0; i < 3; i++)"
 
       for (var i = 0; i < computerOptions.length; i++)
         // 4. Create a for loop that randomly returns one of those items in the array.
         for (var i = 0; i < computerOptions[random]; i++) {}
 
-      // 5. Write logic for computer to make a choice randomly.
 
-      const computerChoice = gameChoices.random;
-      console.log(computerChoice);
-
-      // 6. Display a the result that the computer chose.
+      // 5. Display a the result that the computer chose.
       alert("The computer chose " + computerChoice);
 
-      // 7. Evaluate user choice vs computer choice using conditional statements.
+      // 6. Evaluate user choice vs computer choice using conditional statements.
 
       if (userChoice === computerChoice) {
         alert("There was a tie!");
@@ -55,8 +60,9 @@
           alert("You've lost this round. Sorry!");
           losses++;
       }
-      // 8. Run Compare function
-      // 9. Display the results
+
+      // 7. Run Compare function
+      // 8. Display the results
       console.log(wins);
       console.log(losses);
       console.log(ties);
