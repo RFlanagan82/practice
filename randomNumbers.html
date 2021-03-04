@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //run a loop 10 times and generate a random rumber between 1 and 10
+    for (var i = 0; i < 10; i++){
+        // math floor rounds down to nearest whole number so we need to add a 1 in case the Math Random function selects a decimal number lower than 1
+        var num = Math.floor(Math.random() * 10) + 1;
+        //Display in the console
+        console.log(num);
+    }
+    
+    </script>
+</body>
+</html>
