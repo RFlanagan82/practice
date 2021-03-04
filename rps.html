@@ -10,7 +10,7 @@
     <h1>Ready to Play?</h1>
     <script type="text/javascript">
 
-      // 1. Create an array with a variable "Game" = ["Rock", "Paper","Scissors"]
+      // 1. Create an array with a variable "Game" to hold the options = ["Rock", "Paper","Scissors"]
 
       const computerOptions = ["Rock", "Paper", "Scissors"];
 
@@ -20,14 +20,14 @@
       let losses = 0;
       let ties = 0;
 
-      //Create a loop to run the game 10 times
+      //Create a loop to run the game 10 times and place your game logic in it
 
       for (var i = 0; i < 10; i++) {
         const userChoice = prompt("Please enter: Rock, Paper, or Scissors?");
         console.log(userChoice);
         alert("You chose " + userChoice);
 
-        //4. Write logic for computer to make a choice randomly out of the 3 computerOption array items - Don't need to round up here.
+        //4. Write logic for computer to make a choice randomly out of the 3 computerOption choices - Don't need to round up here.
         const randomNumber = Math.floor(Math.random() * 3);
         //   console.log(randomNumber);
 
