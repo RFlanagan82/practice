@@ -9,73 +9,69 @@
   <body>
     <h1>Ready to Play?</h1>
     <script type="text/javascript">
+    
+      // 1. Create an array with a variable "Game" = ["Rock", "Paper","Scissors"]
 
-          function runGame(){
-       // 1. Create an array with a variable "Game" = ["Rock", "Paper","Scissors"]
+      const computerOptions = ["Rock", "Paper", "Scissors"];
 
-            const computerOptions = ["Rock", "Paper", "Scissors"];
+      // 2. // Create variables to hold the number of wins, losses, and ties. User starts at 0.
 
-            // 2. // Create variables to hold the number of wins, losses, and ties. User starts at 0.
+      let wins = 0;
+      let losses = 0;
+      let ties = 0;
 
-            let wins = 0;
-            let losses = 0;
-            let ties = 0;
+      //Create a loop to run the game 10 times
 
-            //3. Prompt a user to ask for them to choose one of those index items, call this variable userChoice
-            const userChoice = prompt("Please enter: Rock, Paper, or Scissors?");
-            console.log(userChoice);
-            alert("You chose " + userChoice)
+      for (var i = 0; i < 10; i++) {
+        const userChoice = prompt("Please enter: Rock, Paper, or Scissors?");
+        console.log(userChoice);
+        alert("You chose " + userChoice);
 
-            //4. Write logic for computer to make a choice randomly out of the 3 computerOption array items - Don't need to round up here.
-            const randomNumber = Math.floor(Math.random() * 3);
-          //   console.log(randomNumber);
+        //4. Write logic for computer to make a choice randomly out of the 3 computerOption array items - Don't need to round up here.
+        const randomNumber = Math.floor(Math.random() * 3);
+        //   console.log(randomNumber);
 
-             //then assign variable computerChoice as equal to the computerChoices[randomNumber]
+        //then assign variable computerChoice as equal to the computerChoices[randomNumber] the random number becomes the index number for computer options
 
-              const computerChoice = computerOptions[randomNumber]
-              console.log(computerChoice);
+        const computerChoice = computerOptions[randomNumber];
+        console.log(computerChoice);
 
-            // 5. Display a the result that the computer chose.
-            alert("The computer chose " + computerChoice);
+        // 5. Display a the result that the computer chose.
+        alert("The computer chose " + computerChoice);
 
-            // 6. Evaluate user choice vs computer choice using conditional statements & Run Compare function
+        // 6. Evaluate user choice vs computer choice using conditional statements & Run Compare function
 
-            if (userChoice === computerChoice) {
-              ties++;
-              alert("There was a tie! The current number of ties is " + ties);
+        if (userChoice === computerChoice) {
+          ties++;
+          alert("There was a tie! The current number of ties is " + ties);
+        } else if (
+          (userChoice === "Rock" && computerChoice === "Scissors") ||
+          (userChoice === "Paper" && computerChoice === "Rock") ||
+          (userChoice === "Scissors" && computerChoice === "Paper")
+        ) {
+          wins++;
+          alert("You Won! Your current number of wins is " + wins);
+        } else {
+          losses++;
+          alert("You Lost! Your current number of losses is " + losses);
+        }
 
-            } else if (userChoice === "Rock" && computerChoice === "Scissors") {
-              wins++;
-              alert("You Won this round!");
-            } else if (userChoice === "Scissors" && computerChoice === "Paper") {
-              wins++;
-              alert("You Won this round!");
-            } else if (userChoice === "Paper" && computerChoice === "Rock") {
-              wins++;
-              alert("You Won this round!");
-            } else {
-              losses++;
-              alert("You've lost this round. Sorry! Your current number of losses is " + losses);
+        // 7. Display the results in the console
+        console.log("You have " + wins + " wins!");
+        console.log("You have " + losses + " losses.");
+        console.log("You have " + ties + " ties.");
 
-            }
-
-            // 7. Display the results
-            console.log("You have " + wins + " wins!");
-            console.log("You have " + losses + " losses.");
-            console.log("You have " + ties + " ties.");
-          }
-
-          runGame();
-
-    var replayPrompt = prompt("You you want to play again (yes or no)?");
-      console.log(replayPrompt);
-
-      var replayAnswer = replayPrompt;
-      if (replayPrompt = "yes"){
-          runGame();
-      } if (replayPrompt = "no"){
-          alert("Okay, maybe next time then!")
+        // 8. Display the results to the user at the end of the 9th game
+        if (i === 9) {
+            alert(
+                "Total wins: " + wins + "\n" +
+                "Total losses: " + losses + "\n" +
+                "Total ties: " + ties
+            );
+        }
       }
+
+  
     </script>
   </body>
 </html>
